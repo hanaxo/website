@@ -63,7 +63,7 @@ Function インターフェースは引数一つ受け取って結果を返す�
 	- `Function<String, String> sourMkaer2 = (fruit) -> { return fruit + "サワー"; };`  
       ラムダ式で #apply メソッドをオーバーライドし、匿名ラクスを作っていると言える
       メソッド複数だとどれをオーバーライドするのか判断つかない
-- 一覧
+- 一覧  
   https://docs.oracle.com/javase/jp/8/docs/api/java/util/function/package-summary.html
 
 
