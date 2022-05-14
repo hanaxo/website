@@ -4,6 +4,42 @@
 
 Java 8 以降は仕事でコーディングしていなかったので改めてJavaプログラマになってみたい。
 
+## Java 7
+
+### 複数の例外をまとめてキャッチできるようになった
+```java
+try {
+	...
+} catch ( NullPointerException | NumberFormatExcetpion e ) {
+	logger.error(e);
+}
+```
+
+### ダイヤモンド演算子
+
+Java 5 で導入されたジェネリクス(総称型)の書き方がちょびっと省略できるようになった。
+```java
+List<String> list = new ArrayList<String>();
+List<String> list = new ArrayList<>(); // ちょびっと省略
+```
+
+### try-with-resources 文
+
+開けたら閉める的なお作法からの解放。勝手に閉じてくれる。finally でさらにキャッチとか嫌な思い出。  
+Closeable の上にできた AutoCloseable インターフェース限定。
+```java
+-- try でリソース指定。finally に reader#close(); 書かなくても勝手に閉じてくれる。
+try (FileReader reader = new FileReader(new File("hoge.txt"))) { 
+	...
+} catch (Exception e) {
+    logger.error(e);
+} 
+```
+
+### switch文で文字列を評価できるようになった
+
+従来は int, enum だけ？
+
 ## Java 8
 
 一日かけてラムダ式とStream APIを勉強したが、書いたコードとまとめ資料が消えてしまった。
