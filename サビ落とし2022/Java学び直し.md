@@ -69,13 +69,22 @@ Function インターフェースは引数一つ受け取って結果を返す�
 
 ### Stream API
 
+for/foreach と if文を使ったループ処理をパイプライン的に記述できる。
+
 ```java
 public static void main(String[] args) {
 
-	// 早くレモンサワー飲みたいな
-
 	List<String> fruits = Arrays.asList("りんご", "シチリアンレモン", "みかん", "グリーンレモン");
 
+	// レモンください
+	List<String> lemons = fruits.stream()
+		// レモンを探す。filterの引数はPredicateなのでラムダ式でOK
+		.filter(a -> a.contains("レモン"))
+		// リストを作る
+		.collect(Collectors.toList());
+
+	// 早くレモンサワー飲みたいな
+	// Optional の説明は後回し
 	Optional<String> sour = fruits.stream()
 		// これだけで並列処理になる
 		.parallel()
@@ -85,10 +94,8 @@ public static void main(String[] args) {
 		.map(a -> a + "サワー")
 		// 並列で処理したどれか一個
 		.findAny();
-
-	// Optional の説明は後回し
 	sour.ifPresent(a -> System.out.println(a + "うまい！"));
 }
 ```
 
-
+### Optional
