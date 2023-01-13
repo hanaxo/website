@@ -19,7 +19,7 @@ hoge is None # 普通はこっち。
 
 ## 論理演算子
 
-* && || ! ではなく and or not
+* && \|\| ! ではなく and or not
 * 排他的論理和だけ記号で ^
 * false and true, true or false のとき右辺は評価されない(短絡演算)
 * x > 0 and x < 10 は 0 < x < 10 と書けて便利
@@ -40,6 +40,7 @@ elif 条件式:
 ## switch/match
 
 * switchはifで実装できるよねと[公式見解](https://docs.python.org/ja/3/faq/design.html#why-isn-t-there-a-switch-or-case-statement-in-python)
+* [生みの親も提案したが採用されず](https://peps.python.org/pep-3103/)
 * matchがver3.10で追加された<br>
     * https://docs.python.org/ja/3/tutorial/controlflow.html#match-statements
     * https://www.python.jp/news/wnpython310/index.html
