@@ -39,11 +39,18 @@ elif 条件式:
 
 ## switch/match
 
-* switchはifで実装できるよねと[公式見解](https://docs.python.org/ja/3/faq/design.html#why-isn-t-there-a-switch-or-case-statement-in-python)
+### switch
+
+* ifで実装できるよねと[公式見解](https://docs.python.org/ja/3/faq/design.html#why-isn-t-there-a-switch-or-case-statement-in-python)
 * [生みの親も提案したが採用されず](https://peps.python.org/pep-3103/)
-* matchがver3.10で追加された<br>
-    * https://docs.python.org/ja/3/tutorial/controlflow.html#match-statements
-    * https://www.python.jp/news/wnpython310/index.html
-    * ほぼswitchと同じ書き方
-    * 一致する最初のパターンのみ実行されるので break はない
-    * default: は case _:
+
+### match
+
+* ver3.10で追加されたパターンマッチ
+* C などの switch と同じ書き方
+* リスト型などのパターンマッチもできる！
+* 一致する最初のパターンのみ実行されるので break はない
+* default: は case _:
+* わかりやすい説明🔽
+  * https://docs.python.org/ja/3/tutorial/controlflow.html#match-statements
+  * https://www.python.jp/news/wnpython310/index.html
